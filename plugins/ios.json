@@ -15,10 +15,19 @@
         },
         "cordova-plugin-geolocation": {
             "PACKAGE_NAME": "io.cordova.hellocordova"
+        },
+        "de.appplant.cordova.plugin.local-notification": {
+            "PACKAGE_NAME": "io.cordova.hellocordova"
         }
     },
     "dependent_plugins": {
         "cordova-plugin-compat": {
+            "PACKAGE_NAME": "io.cordova.hellocordova"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "io.cordova.hellocordova"
+        },
+        "cordova-plugin-app-event": {
             "PACKAGE_NAME": "io.cordova.hellocordova"
         }
     }
