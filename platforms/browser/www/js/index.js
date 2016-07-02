@@ -36,13 +36,14 @@ var app = {
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
+        console.log('Device ready');
         app.receivedEvent('deviceready');
-        $(document).on('load', function(){
+        /*$(document).on('load', function(){
           $("#homelocation").countrySelect({
             defaultCountry: 'nz'
 
           });
-        });
+        });*/
 
     },
     // Update DOM on a Received Event
@@ -86,9 +87,79 @@ var app = {
       ret.homelocation = this.storage.getItem('homelocation');
       ret.dob = this.storage.getItem('dob');
       return ret;
-    }
+    }/*,
+    "fomos": {
+          "0": {
+              "fomoname": "Fomo 1",
+              "description": "",
+              "points": 20
+          },
+          "1": {
+              "fomoname": "",
+              "description": "",
+              "points": 20
 
+          },
+          "2": {
+              "fomoname": "",
+              "description": "",
+              "points": 20
+
+          },
+          "3": {
+              "fomoname": "",
+              "description": "",
+              "points": 20
+
+          },
+          "4": {
+              "fomoname": "",
+              "description": "",
+              "points": 20
+
+          },
+          "5": {
+              "fomoname": "",
+              "description": "",
+              "points": 20
+
+          },
+          "6": {
+              "fomoname": "",
+              "description": "",
+              "points": 20
+
+          },
+          "7": {
+              "fomoname": "",
+              "description": "",
+              "points": 20
+
+          }
+      },
+      "fixes": {
+          "0": {
+              "packname": "Pack 1",
+              "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi cursus mauris et leo tincidunt finibus. Nam ac lacinia turpis. Integer rutrum nibh non sapien interdum varius. Fusce consectetur dolor eu tincidunt consequat. ",
+              "fomos": [0, 1, 2]
+          },
+          "1": {
+              "packname": "Pack 2",
+              "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi cursus mauris et leo tincidunt finibus. Nam ac lacinia turpis. Integer rutrum nibh non sapien interdum varius. Fusce consectetur dolor eu tincidunt consequat. ",
+              "fomos": [3, 4, 5]
+          },
+          "2": {
+              "id": 2,
+              "packname": "Pack 3",
+              "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi cursus mauris et leo tincidunt finibus. Nam ac lacinia turpis. Integer rutrum nibh non sapien interdum varius. Fusce consectetur dolor eu tincidunt consequat. ",
+              "fomos": [1, 3, 4, 2]
+          }
+
+      },
+      fixlisthtml: function(fix_id) {
+          var fixcontainer = '<div data-role="collapsible"></div>';
+      }*/
 
 };
-
+console.log('initialising app');
 app.initialize(window.localStorage);

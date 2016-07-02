@@ -59,8 +59,8 @@
     <!-- login -->
     <div data-role="page" id="loginpage" data-theme="a">
         <div class="ui-content">
-            <img src="" id="login-logo" alt="FOMOFix App Logo">
-            <p id="herotext">Start Recording & Rewarding Your Adventures!</p>
+            <img src="img/logo.png" id="login-logo" alt="FOMOFix App Logo">
+            <p id="herotext">Start Recording &amp; Rewarding Your Adventures!</p>
             <h1>Sign In</h1>
             <form id="sign-in-form" class="loginform" onsubmit="app.login(); return false;">
                 <label for="username">Username :</label>
@@ -75,26 +75,23 @@
         </div>
     </div>
 
-    <!-- Packs -->
-    <div data-role="page" id="packs">
+    <!-- Fixes -->
+    <div data-role="page" id="fixes">
         <div data-role="header">
-            <h1>Packs</h1>
+            <h1>Fixes</h1>
         </div>
 
         <div class="ui-content" id="">
-            <div class="pack-super-container">
-                <div class="pack-container">
-                  <div class="pack">
-                  </div>
-                </div>
-            </div>
+          <div data-role="collapsible-set">
+
+          </div>
         </div>
-        <!-- end Packs content -->
+        <!-- end Fixes content -->
 
         <div data-role="footer" data-position="fixed">
             <div data-role="navbar">
                 <ul>
-                    <li><a href="#packs" class="ui-btn-active ui-state-persist">Packs</a></li>
+                    <li><a href="#fixes" class="ui-btn-active ui-state-persist">Fixes</a></li>
                     <li><a href="#profile">Profile</a></li>
                     <li><a href="#achievements">Achievements</a></li>
                 </ul>
@@ -103,7 +100,7 @@
         </div>
         <!-- /footer -->
     </div>
-    <!-- /packs -->
+    <!-- /fixes -->
 
     <!-- Profile -->
     <div data-role="page" id="profile">
@@ -379,6 +376,7 @@
                   <option value="other">Other</option>
                   <option value="dna">Rather not say</option>
                 </select>
+                <input type="submit" value="Save" class=""/>
             </form>
         </div>
         <!-- end Profile content -->
@@ -386,7 +384,7 @@
         <div data-role="footer" data-position="fixed">
             <div data-role="navbar">
                 <ul>
-                    <li><a href="#packs">Packs</a></li>
+                    <li><a href="#fixes">Fixes</a></li>
                     <li><a href="#profile" class="ui-btn-active ui-state-persist">Profile</a></li>
                     <li><a href="#achievements">Achievements</a></li>
                 </ul>
@@ -404,14 +402,16 @@
         </div>
 
         <div class="ui-content">
-            <p>This is Achievements</p>
+            <div class="achievement">
+              <div class="">
+            </div>
         </div>
         <!-- end Achievements content -->
 
         <div data-role="footer" data-position="fixed">
             <div data-role="navbar">
                 <ul>
-                    <li><a href="#packs">Packs</a></li>
+                    <li><a href="#fixes">Fixes</a></li>
                     <li><a href="#profile">Profile</a></li>
                     <li><a href="#achievements" class="ui-btn-active ui-state-persist">Achievements</a></li>
                 </ul>
@@ -433,7 +433,7 @@
     <script type="text/javascript" src="js/jquery-1.5.0.mobile.min.js"></script>
     <script type="text/javascript" src="js/countrySelect.min.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
-    <script type="text/javascript" src="js/fomo.js"></script>
+    <!--<script type="text/javascript" src="js/fomo.js"></script>-->
 </body>
 
 </html>
