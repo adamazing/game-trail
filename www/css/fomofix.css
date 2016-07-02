@@ -1,0 +1,35 @@
+#login-logo {
+  display:block;
+  margin-left:auto;
+  margin-right:auto;
+  width:6em;
+  text-align:center;
+}
+
+#herotext{
+  margin-left:auto;
+  margin-right:auto;
+  width: 90%;
+  text-align:center;
+  margin-bottom: 20%;
+}
+
+.forgot-sign-up-container {
+  margin-left:auto;
+  margin-right:auto;
+  width:90%;
+  display:flex;
+  justify-content: space-around;
+  text-align:center;
+}
+
+.forgot-sign-up-container > a {
+
+}
+
+
+.loginform {
+  margin-left:auto;
+  margin-right:auto;
+  width:90%;
+}

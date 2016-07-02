@@ -28,22 +28,115 @@
             * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
                 * Enable inline JS: add 'unsafe-inline' to default-src
         -->
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+        <meta http-equiv="Content-Security-Policy" content="default-src &apos;self&apos; data: gap: https://ssl.gstatic.com &apos;unsafe-eval&apos;; style-src &apos;self&apos; &apos;unsafe-inline&apos;; media-src *">
         <meta name="format-detection" content="telephone=no">
         <meta name="msapplication-tap-highlight" content="no">
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
         <link rel="stylesheet" type="text/css" href="css/index.css">
-        <title>Hello World</title>
+        <link rel="stylesheet" type="text/css" href="css/fomofix.css">
+ 		    <link rel="stylesheet" type="text/css" href="js/jquery-1.5.0.mobile.min.css">
+		<style>
+		/* For avoiding title truncation in wp8 */
+		.ui-header .ui-title {
+				overflow: visible !important;
+		}
+		/* For fixing the absolute position issue for the default cordova gen page*/
+		#cjp-accordion1 .app {
+				left: 5px !important;
+				margin: 5px !important;
+				position: relative !important;
+		}
+		</style>
+    <title>FOMOFix</title>
     </head>
     <body>
-        <div class="app">
-            <h1>Apache Cordova</h1>
-            <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
-            </div>
+
+    <!-- login -->
+    <div data-role="page" id="loginpage">
+      <div class="ui-content">
+        <img src="" id="login-logo" alt="FOMOFix App Logo">
+        <p id="herotext">Start Recording & Rewarding Your Achievements!</p>
+        <h1>Sign In</h1>
+        <form id="sign-in-form" class="loginform">
+          <label for="username">Username :</label><input id="username" type="text" />
+          <label for="password">Password :</label><input id="password" type="password" />
+          <input type="submit" value="Login" />
+        </form>
+        <div class="forgot-sign-up-container">
+          <a href="#" id="forgot">Forgot Details?</a><a href="#" id="signup">Sign Up</a>
         </div>
-        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
-    </body>
+			</div>
+    </div>
+
+		<!-- Packs -->
+		<div data-role="page" id="packs">
+			<div data-role="header">
+				<h1>Packs</h1>
+			</div>
+
+			<div class="ui-content">
+				<p>Packs content goes here</p>
+			</div><!-- end Packs content -->
+
+			<div data-role="footer" data-position="fixed">
+				<div data-role="navbar">
+					<ul>
+						<li><a href="#packs" class="ui-btn-active ui-state-persist">Packs</a></li>
+						<li><a href="#profile">Profile</a></li>
+						<li><a href="#achievements">Achievements</a></li>
+					</ul>
+				</div><!-- /navbar -->
+			</div><!-- /footer -->
+		</div><!-- /packs -->
+
+				<!-- Profile -->
+		<div data-role="page" id="profile">
+			<div data-role="header">
+				<h1>Profile</h1>
+			</div>
+
+			<div class="ui-content">
+				<p>This is Profile</p>
+			</div><!-- end Profile content -->
+
+			<div data-role="footer" data-position="fixed">
+				<div data-role="navbar">
+					<ul>
+						<li><a href="#packs">Packs</a></li>
+						<li><a href="#profile" class="ui-btn-active ui-state-persist">Profile</a></li>
+						<li><a href="#achievements">Achievements</a></li>
+					</ul>
+				</div><!-- /navbar -->
+			</div><!-- /footer -->
+		</div><!-- /profile -->
+
+				<!-- Achievements -->
+		<div data-role="page" id="achievements">
+			<div data-role="header">
+				<h1>Achievements</h1>
+			</div>
+
+			<div class="ui-content">
+				<p>This is Achievements</p>
+			</div><!-- end Achievements content -->
+
+			<div data-role="footer" data-position="fixed">
+				<div data-role="navbar">
+					<ul>
+						<li><a href="#packs">Packs</a></li>
+						<li><a href="#profile">Profile</a></li>
+						<li><a href="#achievements" class="ui-btn-active ui-state-persist">Achievements</a></li>
+					</ul>
+				</div><!-- /navbar -->
+			</div><!-- /footer -->
+		</div><!-- /achievements -->
+<script type="text/javascript" src="cordova.js"></script><script type="text/javascript" src="js/jquery-1.11.1.min.js" id="cordova-jquery"></script><script type="text/javascript" id="jqm-trans-disable">
+		/* For having a faster transition */
+		$(document).on("mobileinit", function() {
+				$.mobile.defaultPageTransition = "none";
+				$.mobile.defaultDialogTransition = "none";
+		});
+		</script>
+    <script type="text/javascript" src="js/jquery-1.5.0.mobile.min.js"></script>
+    <script type="text/javascript" src="js/index.js"></script></body>
 </html>
