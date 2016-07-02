@@ -33,3 +33,9 @@
   margin-right:auto;
   width:90%;
 }
+
+.ui-mobile .left-aligned-fields label,
+.ui-mobile .left-aligned-fields input{
+  width:100%;
+  text-align: left;
+}

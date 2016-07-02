@@ -17,9 +17,12 @@
  * under the License.
  */
 var app = {
+
+
     // Application Constructor
-    initialize: function() {
+    initialize: function(stor) {
         this.bindEvents();
+        this.storage = stor;//window.localStorage'';
     },
     // Bind Event Listeners
     //
@@ -34,6 +37,13 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
+        $(document).on('load', function(){
+          $("#homelocation").countrySelect({
+            defaultCountry: 'nz'
+
+          });
+        });
+
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
@@ -45,8 +55,40 @@ var app = {
         receivedElement.setAttribute('style', 'display:block;');
 
         console.log('Received Event: ' + id);
+    },
+    login: function(){
+        if(!this.storage.getItem('runbefore')){
+          $.mobile.changePage('#profile');
+          this.storage.setItem('runbefore',true);
+        }else{
+          $.mobile.changePage('#packs');
+        }
+        /*return false;*/
+    },
+    setLoggedInUsername: function(username){
+      this.storage.setItem('username',username);
+    },
+    getLoggedInUsername: function(){
+      return this.storage.getItem('username');
+    },
+    saveUserProfile: function(uname,homelocation,dob){
+      //var username = this.getLoggedInUsername();
+      //var userObj = {'name': name,'homelocation':homelocation,'dob':dob};
+      //this.storage.setItem()
+      this.storage.setItem('uname',uname);
+      this.storage.setItem('homelocation',homelocation);
+      this.storage.setItem('dob',dob);
+      return true;
+    },
+    getUserProfileData: function(){
+      var ret = {};
+      ret.uname = this.storage.getItem('uname');
+      ret.homelocation = this.storage.getItem('homelocation');
+      ret.dob = this.storage.getItem('dob');
+      return ret;
     }
-    
+
+
 };
 
-app.initialize();
+app.initialize(window.localStorage);
