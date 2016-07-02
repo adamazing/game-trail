@@ -109,9 +109,9 @@
         </div>
 
         <div class="ui-content">
-            <form id="profile-form" class="left-aligned-fields">
+            <form id="profile-form" class="left-aligned-fields" onsubmit="app.saveUserProfile(); return false;">
                 <label>Name: </label>
-                <input id="name" name="name" type="text" default="Name" />
+                <input id="uname" name="uname" type="text" default="Name" />
                 <label for="hometown">Home Town: </label>
                 <input type="text" name="hometown" id="hometown" placeholder="Where's Home?"/>
 
@@ -369,14 +369,14 @@
                     <option value="Zimbabwe">Zimbabwe</option>
                 </select>
                 <label for="dob">Date of Birth: </label>
-                <input type="text" name="dob" data-role="date">
+                <input type="text" name="dob" id="dob" data-role="date">
                 <select id="gender" name="gender">
                   <option value="male">Male</option>
                   <option value="female">Female</Fption>
                   <option value="other">Other</option>
                   <option value="dna">Rather not say</option>
                 </select>
-                <input type="submit" value="Save" data-theme="e" class=""/>
+                <input type="submit" value="Save"  class="btn-save"/>
             </form>
         </div>
         <!-- end Profile content -->

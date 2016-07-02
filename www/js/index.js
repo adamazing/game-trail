@@ -38,6 +38,12 @@ var app = {
     onDeviceReady: function() {
         console.log('Device ready');
         app.receivedEvent('deviceready');
+
+        $(document).on("pagecreate",  function (event,ui) {
+          console.log('Initialising profile page');
+          var data = getUserProfileData();
+          $('#uname').val(data.uname);
+        });
         /*$(document).on('load', function(){
           $("#homelocation").countrySelect({
             defaultCountry: 'nz'
@@ -72,20 +78,26 @@ var app = {
     getLoggedInUsername: function(){
       return this.storage.getItem('username');
     },
-    saveUserProfile: function(uname,homelocation,dob){
+    saveUserProfile: function(uname,hometown,homelocation,dob,gender){
       //var username = this.getLoggedInUsername();
       //var userObj = {'name': name,'homelocation':homelocation,'dob':dob};
       //this.storage.setItem()
-      this.storage.setItem('uname',uname);
+      console.log('saving data');
+      this.storage.setItem('uname',$('#uname'));
+
+      this.storage.setItem('hometown',hometown);
       this.storage.setItem('homelocation',homelocation);
       this.storage.setItem('dob',dob);
+      this.storage.setItem('gender',gender);
       return true;
     },
     getUserProfileData: function(){
       var ret = {};
       ret.uname = this.storage.getItem('uname');
+      ret.homelocation = this.storage.getItem('homeTown');
       ret.homelocation = this.storage.getItem('homelocation');
       ret.dob = this.storage.getItem('dob');
+      ret.dob = this.storage.getItem('gender');
       return ret;
     }/*,
     "fomos": {
