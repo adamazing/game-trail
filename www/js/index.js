@@ -62,7 +62,7 @@ var app = {
           $.mobile.changePage('#profile');
           this.storage.setItem('runbefore',true);
         }else{
-          $.mobile.changePage('#packs');
+          $.mobile.changePage('#fixes');
         }
         /*return false;*/
     },
