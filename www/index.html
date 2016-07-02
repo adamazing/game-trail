@@ -49,23 +49,35 @@
         <title>Hello World</title>
     </head>
     <body>
-        <div class="app">
-            <h1>Apache Cordova</h1>
-            <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
-            </div>
-        </div>
-        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/jquery-1.11.1.min.js" id="cordova-jquery"></script>
-		<script type="text/javascript" id="jqm-trans-disable">
+		<div data-role="page" id="page1">
+			<div data-role="header"><h1>Page 1</h1></div>
+			<div data-role="content">Introductory text can be placed here ...</div>
+			<div data-role="collapsible-set">
+				<div id="cjp-accordion1" data-role="collapsible" data-collapsed="false">
+					<h3>Section 1</h3>
+					<p></p><p>Page 1 content goes here</p><p></p>
+				</div>
+				<div data-role="collapsible">
+					<h3>Section 2</h3>
+					<p>Section 2</p>
+				</div>
+				<div data-role="collapsible">
+					<h3>Section 3</h3>
+					<p>Section 3</p>
+				</div>
+			</div>
+		
+
+			<div data-role="footer" data-position="fixed">
+				<h4>Page 1 Footer</h4>
+			</div>
+			<!-- end page 1 footer -->
+		</div>
+<script type="text/javascript" src="cordova.js"></script><script type="text/javascript" src="js/jquery-1.11.1.min.js" id="cordova-jquery"></script><script type="text/javascript" id="jqm-trans-disable">
 		/* For having a faster transition */
 		$(document).on("mobileinit", function() {
 				$.mobile.defaultPageTransition = "none";
 				$.mobile.defaultDialogTransition = "none";
 		});
-		</script>
-        <script type="text/javascript" src="js/jquery-1.5.0.mobile.min.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
-    </body>
+		</script><script type="text/javascript" src="js/jquery-1.5.0.mobile.min.js"></script><script type="text/javascript" src="js/index.js"></script></body>
 </html>
